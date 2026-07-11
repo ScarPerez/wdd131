@@ -2,16 +2,34 @@ const input = document.querySelector("#favchap");
 const button = document.querySelector("button");
 const list = document.querySelector("#list");
 
-const li = document.createElement("li");
+button.addEventListener("click", function () {
 
-const deleteButton = document.createElement("button");
+    if (input.value.trim() !== "") {
 
-li.textContent = input.value;
+        const li = document.createElement("li");
 
-deleteButton.textContent = "❌";
+        const deleteButton = document.createElement("button");
 
-deleteButton.setAttribute("aria-label", "Remove chapter");
+        li.textContent = input.value;
 
-li.append(deleteButton);
+        deleteButton.textContent = "❌";
 
-list.append(li);
+        deleteButton.setAttribute("aria-label", "Remove chapter");
+
+        deleteButton.addEventListener("click", function () {
+
+            list.removeChild(li);
+
+        });
+
+        li.append(deleteButton);
+
+        list.append(li);
+
+        input.value = "";
+
+    }
+
+    input.focus();
+
+});
