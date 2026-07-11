@@ -1,0 +1,42 @@
+/* Large View */
+
+@media screen and (min-width: 768px) {
+
+    /* Header */
+
+    header {
+        padding: 1rem 2rem;
+    }
+
+    /* Ocultar botón hamburguesa */
+
+    #menuButton {
+        display: none;
+    }
+
+    /* Mostrar menú horizontal */
+
+    nav {
+        display: flex;
+        position: static;
+        width: auto;
+        background: none;
+        gap: 1rem;
+    }
+
+    nav a {
+        padding: .75rem 1rem;
+        border-radius: 6px;
+    }
+
+    /* Galería */
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    figure img {
+        height: 230px;
+    }
+
+}
