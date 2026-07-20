@@ -1,0 +1,37 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Page style */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+}
+
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+/* Main container */
+main {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+
+/* Responsive image */
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
