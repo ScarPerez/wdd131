@@ -60,7 +60,8 @@ border-radius:10px;
 
 .weather img{
 
-width:70px;
+width:60px;
+display:block;
 
 }
 
