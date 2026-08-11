@@ -3,7 +3,6 @@
 ========================================= */
 
 const drivers = [
-
     {
         name: "Lando Norris",
         number: 1,
@@ -201,7 +200,6 @@ const drivers = [
         teamFilter: "cadillac",
         image: "images/drivers/valtteri-bottas.webp"
     }
-
 ];
 
 
@@ -227,14 +225,11 @@ function displayDrivers(driverList) {
     driversGrid.innerHTML = "";
 
     if (driverList.length === 0) {
-
         noResults.hidden = false;
-
         return;
     }
 
     noResults.hidden = true;
-
 
     driverList.forEach((driver) => {
 
@@ -242,25 +237,18 @@ function displayDrivers(driverList) {
 
         card.classList.add("driver-card");
 
-
         card.innerHTML = `
-
             <div class="driver-image-container">
-
                 <img
                     class="driver-image"
                     src="${driver.image}"
                     alt="${driver.name}"
-                    loading="lazy"
-                    onerror="this.style.display='none';">
-
+                    loading="lazy">
             </div>
-
 
             <div class="driver-number">
                 ${driver.number}
             </div>
-
 
             <div class="driver-card-content">
 
@@ -277,14 +265,10 @@ function displayDrivers(driverList) {
                 </p>
 
             </div>
-
         `;
 
-
         driversGrid.appendChild(card);
-
     });
-
 }
 
 
@@ -298,42 +282,21 @@ function filterDrivers() {
         .toLowerCase()
         .trim();
 
-
     const filteredDrivers = drivers.filter((driver) => {
 
         const matchesSearch =
-            driver.name
-                .toLowerCase()
-                .includes(searchTerm)
-
-            ||
-
-            driver.team
-                .toLowerCase()
-                .includes(searchTerm)
-
-            ||
-
-            driver.nationality
-                .toLowerCase()
-                .includes(searchTerm);
-
+            driver.name.toLowerCase().includes(searchTerm) ||
+            driver.team.toLowerCase().includes(searchTerm) ||
+            driver.nationality.toLowerCase().includes(searchTerm);
 
         const matchesTeam =
-            selectedTeam === "all"
-
-            ||
-
+            selectedTeam === "all" ||
             driver.teamFilter === selectedTeam;
 
-
         return matchesSearch && matchesTeam;
-
     });
 
-
     displayDrivers(filteredDrivers);
-
 }
 
 
@@ -356,21 +319,14 @@ filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
 
         filterButtons.forEach((item) => {
-
             item.classList.remove("active");
-
         });
-
 
         button.classList.add("active");
 
-
-        selectedTeam =
-            button.dataset.team;
-
+        selectedTeam = button.dataset.team;
 
         filterDrivers();
-
     });
 
 });
@@ -381,10 +337,7 @@ filterButtons.forEach((button) => {
 ========================================= */
 
 if (currentYear) {
-
-    currentYear.textContent =
-        new Date().getFullYear();
-
+    currentYear.textContent = new Date().getFullYear();
 }
 
 
