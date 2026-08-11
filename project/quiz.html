@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Test your Formula 1 knowledge with the RF1 Rookie Guide quiz.">
+
+    <meta name="author"
+        content="Scarlett Gabriela Pérez Silva">
+
+    <title>Quiz | RF1 - Formula 1 Rookie Guide</title>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="styles/site.css">
+
+    <script src="scripts/quiz.js"
+        defer></script>
+
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <a href="index.html"
+            class="logo-link">
+
+            <img src="images/rf1-logo.png"
+                alt="RF1 logo">
+
+        </a>
+
+
+        <button
+            class="menu-button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
+
+        <nav class="navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="drivers.html">
+                Drivers
+            </a>
+
+            <a href="teams.html">
+                Teams
+            </a>
+
+            <a href="quiz.html"
+                class="active">
+                Quiz
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- QUIZ HERO -->
+
+        <section class="quiz-hero">
+
+            <div class="quiz-hero-content">
+
+                <p class="eyebrow">
+                    RF1 / QUIZ
+                </p>
+
+                <h1>
+                    Think like a rookie.
+                </h1>
+
+                <p>
+                    Test what you've learned and see how much
+                    you know about the world of Formula 1.
+                </p>
+
+                <button
+                    class="primary-button"
+                    id="start-quiz">
+
+                    Start Quiz
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+
+        <section class="quiz-section"
+            id="quiz-section">
+
+            <div class="quiz-container">
+
+                <div class="quiz-progress">
+
+                    <span id="question-number">
+                        Question 1 / 5
+                    </span>
+
+                    <span id="score">
+                        Score: 0
+                    </span>
+
+                </div>
+
+
+                <div class="question-container">
+
+                    <h2 id="question">
+                        Question goes here
+                    </h2>
+
+
+                    <div class="answer-options"
+                        id="answer-options">
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    id="next-question"
+                    disabled>
+
+                    Next
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULT -->
+
+        <section class="quiz-result"
+            id="quiz-result">
+
+            <div class="result-content">
+
+                <p class="eyebrow">
+                    QUIZ COMPLETE
+                </p>
+
+                <h2>
+                    <span id="final-score">
+                        0
+                    </span>
+                    / 5
+                </h2>
+
+                <p id="result-message">
+                    Great job!
+                </p>
+
+                <button
+                    class="primary-button"
+                    id="restart-quiz">
+
+                    Try Again
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <a href="index.html"
+                class="footer-logo">
+
+                <img src="images/rf1-logo.png"
+                    alt="RF1">
+
+            </a>
+
+            <p>
+                Formula 1, made simple.
+            </p>
+
+            <p>
+                A beginner's guide to understanding
+                the world of Formula 1.
+            </p>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="current-year"></span>
+                RF1 Rookie Guide
+            </p>
+
+            <p>
+                Created by Scarlett Gabriela Pérez Silva
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

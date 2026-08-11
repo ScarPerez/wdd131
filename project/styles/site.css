@@ -1453,6 +1453,306 @@ blockquote {
 
 }
 
+/* ---------- QUIZ PAGE ---------- */
+
+.quiz-hero {
+
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 120px 8%;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(29, 61, 94, 0.92),
+            rgba(29, 61, 94, 0.96)
+        );
+
+}
+
+
+.quiz-hero-content {
+
+    max-width: 800px;
+
+}
+
+
+.quiz-hero h1 {
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(4rem, 9vw, 7rem);
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+
+}
+
+
+.quiz-hero p:not(.eyebrow) {
+
+    max-width: 600px;
+
+    margin-bottom: 35px;
+
+    font-size: 1.1rem;
+
+    font-weight: 300;
+
+}
+
+
+/* ---------- BUTTON ---------- */
+
+.primary-button {
+
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    border: 1px solid white;
+
+    background: white;
+
+    color: var(--deep-blue);
+
+    font-family: var(--body-font);
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.primary-button:hover {
+
+    background: transparent;
+
+    color: white;
+
+}
+
+
+/* ---------- QUIZ SECTION ---------- */
+
+.quiz-section {
+
+    display: none;
+
+    padding: 120px 8%;
+
+    background: var(--white);
+
+}
+
+
+.quiz-section.active {
+
+    display: block;
+
+}
+
+
+.quiz-container {
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+}
+
+
+.quiz-progress {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+    margin-bottom: 50px;
+
+    border-bottom: 1px solid #d8e0e7;
+
+    color: var(--muted-blue);
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+.question-container h2 {
+
+    margin-bottom: 45px;
+
+    color: var(--deep-blue);
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(2.2rem, 5vw, 4rem);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+}
+
+
+/* ---------- ANSWERS ---------- */
+
+.answer-options {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.answer-button {
+
+    min-height: 75px;
+
+    padding: 20px;
+
+    border: 1px solid #d8e0e7;
+
+    background: var(--light-bg);
+
+    color: var(--deep-blue);
+
+    font-family: var(--body-font);
+
+    font-size: 0.9rem;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.answer-button:hover:not(:disabled) {
+
+    border-color: var(--deep-blue);
+
+    background: #edf3f8;
+
+}
+
+
+.answer-button.correct {
+
+    border-color: #2d6a4f;
+
+    background: #e7f3ec;
+
+}
+
+
+.answer-button.incorrect {
+
+    border-color: #9b3030;
+
+    background: #f8e8e8;
+
+}
+
+
+.answer-button:disabled {
+
+    cursor: default;
+
+}
+
+
+/* ---------- QUIZ RESULT ---------- */
+
+.quiz-result {
+
+    display: none;
+
+    min-height: 70vh;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 120px 8%;
+
+    text-align: center;
+
+    background: var(--deep-blue);
+
+    color: white;
+
+}
+
+
+.quiz-result.show {
+
+    display: flex;
+
+}
+
+
+.result-content h2 {
+
+    margin: 20px 0;
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(5rem, 12vw, 9rem);
+
+    font-weight: 400;
+
+    line-height: 0.9;
+
+}
+
+
+.result-content p:not(.eyebrow) {
+
+    max-width: 550px;
+
+    margin: 0 auto 35px;
+
+    font-size: 1rem;
+
+    font-weight: 300;
+
+}
+
 /* ---------- RESPONSIVE DESIGN ---------- */
 
 @media (max-width: 800px) {
@@ -1654,3 +1954,70 @@ blockquote {
 
     }
 
+    /* ---------- QUIZ PAGE ---------- */
+
+    .quiz-hero {
+
+        min-height: 65vh;
+
+        padding: 100px 7% 80px;
+
+    }
+
+
+    .quiz-hero h1 {
+
+        font-size: clamp(3.5rem, 14vw, 5rem);
+
+    }
+
+
+    .quiz-section {
+
+        padding: 80px 7%;
+
+    }
+
+
+    .quiz-progress {
+
+        margin-bottom: 35px;
+
+    }
+
+
+    .question-container h2 {
+
+        font-size: 2.5rem;
+
+    }
+
+
+    .answer-options {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .answer-button {
+
+        min-height: 65px;
+
+    }
+
+
+    .quiz-result {
+
+        min-height: 65vh;
+
+        padding: 80px 7%;
+
+    }
+
+
+    .result-content h2 {
+
+        font-size: 6rem;
+
+    }
