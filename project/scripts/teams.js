@@ -3,7 +3,6 @@
 ========================================= */
 
 const teams = [
-
     {
         name: "McLaren",
         teamFilter: "mclaren",
@@ -91,7 +90,6 @@ const teams = [
         drivers: "Sergio Perez & Valtteri Bottas",
         logo: "images/teams/cadillac.webp"
     }
-
 ];
 
 
@@ -99,20 +97,24 @@ const teams = [
    ELEMENTS
 ========================================= */
 
-const teamsGrid =
-    document.querySelector("#teams-grid");
+const teamsGrid = document.querySelector("#teams-grid");
 
-const filterButtons =
-    document.querySelectorAll(".team-filter");
+const filterButtons = document.querySelectorAll(".team-filter");
 
-const noResults =
-    document.querySelector("#no-results");
+const noResults = document.querySelector("#no-results");
 
-const currentYear =
-    document.querySelector("#current-year");
+const currentYear = document.querySelector("#current-year");
 
 
-let selectedTeam = "all";
+/* =========================================
+   CHECK HTML ELEMENTS
+========================================= */
+
+if (!teamsGrid) {
+    console.error(
+        "RF1 ERROR: #teams-grid was not found in teams.html."
+    );
+}
 
 
 /* =========================================
@@ -121,31 +123,36 @@ let selectedTeam = "all";
 
 function displayTeams(teamList) {
 
+    if (!teamsGrid) {
+        return;
+    }
+
     teamsGrid.innerHTML = "";
 
 
     if (teamList.length === 0) {
 
-        noResults.hidden = false;
+        if (noResults) {
+            noResults.hidden = false;
+        }
 
         return;
     }
 
 
-    noResults.hidden = true;
+    if (noResults) {
+        noResults.hidden = true;
+    }
 
 
     teamList.forEach((team) => {
 
-        const card =
-            document.createElement("article");
-
+        const card = document.createElement("article");
 
         card.classList.add("team-card");
 
 
         card.innerHTML = `
-
             <div class="team-logo-container">
 
                 <img
@@ -163,18 +170,15 @@ function displayTeams(teamList) {
                     ${team.country}
                 </p>
 
-
                 <h3>
                     ${team.name}
                 </h3>
-
 
                 <p class="team-drivers">
                     ${team.drivers}
                 </p>
 
             </div>
-
         `;
 
 
@@ -189,16 +193,17 @@ function displayTeams(teamList) {
    FILTER TEAMS
 ========================================= */
 
-function filterTeams() {
+function filterTeams(teamFilter) {
 
-    const filteredTeams =
-        teams.filter((team) => {
+    const filteredTeams = teams.filter((team) => {
 
-            return selectedTeam === "all"
-                ||
-                team.teamFilter === selectedTeam;
+        if (teamFilter === "all") {
+            return true;
+        }
 
-        });
+        return team.teamFilter === teamFilter;
+
+    });
 
 
     displayTeams(filteredTeams);
@@ -214,7 +219,6 @@ filterButtons.forEach((button) => {
 
     button.addEventListener("click", () => {
 
-
         filterButtons.forEach((item) => {
 
             item.classList.remove("active");
@@ -225,11 +229,11 @@ filterButtons.forEach((button) => {
         button.classList.add("active");
 
 
-        selectedTeam =
+        const selectedTeam =
             button.dataset.team;
 
 
-        filterTeams();
+        filterTeams(selectedTeam);
 
     });
 
