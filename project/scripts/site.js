@@ -1,6 +1,9 @@
 // RF1 - Formula 1 Rookie Guide
 
-// Current year in footer
+// =========================================
+// CURRENT YEAR
+// =========================================
+
 const currentYear = document.querySelector("#current-year");
 
 if (currentYear) {
@@ -8,7 +11,10 @@ if (currentYear) {
 }
 
 
-// Mobile navigation
+// =========================================
+// MOBILE NAVIGATION
+// =========================================
+
 const menuButton = document.querySelector(".menu-button");
 const navigation = document.querySelector(".navigation");
 
@@ -18,7 +24,8 @@ if (menuButton && navigation) {
 
         navigation.classList.toggle("open");
 
-        const isOpen = navigation.classList.contains("open");
+        const isOpen =
+            navigation.classList.contains("open");
 
         menuButton.setAttribute(
             "aria-expanded",
@@ -29,43 +36,67 @@ if (menuButton && navigation) {
 
 }
 
-// F1 Dictionary
 
-const termButtons = document.querySelectorAll(".term-button");
+// =========================================
+// F1 DICTIONARY
+// =========================================
+
+const termButtons =
+    document.querySelectorAll(".term-button");
 
 termButtons.forEach((button) => {
 
     button.addEventListener("click", () => {
 
-        const termCard = button.parentElement;
+        const termCard =
+            button.parentElement;
 
-        termCard.classList.toggle("open");
+        const isOpen =
+            termCard.classList.toggle("open");
+
+        button.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
 
     });
 
 });
 
-// Race Weekend
 
-const raceSteps = document.querySelectorAll(".race-step");
-const racePanels = document.querySelectorAll(".race-panel");
+// =========================================
+// RACE WEEKEND
+// =========================================
+
+const raceSteps =
+    document.querySelectorAll(".race-step");
+
+const racePanels =
+    document.querySelectorAll(".race-panel");
 
 raceSteps.forEach((step) => {
 
     step.addEventListener("click", () => {
 
-        const selectedStep = step.dataset.step;
+        // Get the selected race stage
+        // from the data-race attribute
+        const selectedStep =
+            step.dataset.race;
 
 
         // Remove active state from buttons
         raceSteps.forEach((item) => {
+
             item.classList.remove("active");
+
         });
 
 
         // Remove active state from panels
         racePanels.forEach((panel) => {
+
             panel.classList.remove("active");
+
         });
 
 
@@ -77,8 +108,11 @@ raceSteps.forEach((step) => {
         const selectedPanel =
             document.querySelector(`#${selectedStep}`);
 
+
         if (selectedPanel) {
+
             selectedPanel.classList.add("active");
+
         }
 
     });
