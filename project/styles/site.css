@@ -162,7 +162,7 @@ input {
 
     background:
         url("../images/home/hero.webp")
-        center / cover no-repeat;
+        60% center / cover no-repeat;
 
 }
 
@@ -1850,6 +1850,8 @@ input {
         padding: 100px 7% 70px;
 
         align-items: flex-end;
+        
+        background-position: 65% center;
 
     }
 
