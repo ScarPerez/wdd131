@@ -16,6 +16,7 @@
 
     <title>Quiz | RF1 - Formula 1 Rookie Guide</title>
 
+
     <link rel="preconnect"
         href="https://fonts.googleapis.com">
 
@@ -23,11 +24,14 @@
         href="https://fonts.gstatic.com"
         crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+
 
     <link rel="stylesheet"
         href="styles/site.css">
+
 
     <script src="scripts/quiz.js"
         defer></script>
@@ -107,7 +111,8 @@
 
                 <button
                     class="primary-button"
-                    id="start-quiz">
+                    id="start-quiz"
+                    type="button">
 
                     Start Quiz
 
@@ -123,7 +128,11 @@
         <section class="quiz-section"
             id="quiz-section">
 
-            <div class="quiz-container">
+            <form
+                class="quiz-container"
+                id="quiz-form"
+                action="quiz.html"
+                method="get">
 
                 <div class="quiz-progress">
 
@@ -156,13 +165,14 @@
                 <button
                     class="primary-button"
                     id="next-question"
+                    type="button"
                     disabled>
 
                     Next
 
                 </button>
 
-            </div>
+            </form>
 
         </section>
 
@@ -179,10 +189,13 @@
                 </p>
 
                 <h2>
+
                     <span id="final-score">
                         0
                     </span>
+
                     / 5
+
                 </h2>
 
                 <p id="result-message">
@@ -191,7 +204,8 @@
 
                 <button
                     class="primary-button"
-                    id="restart-quiz">
+                    id="restart-quiz"
+                    type="button">
 
                     Try Again
 
@@ -241,8 +255,10 @@
                 Created by Scarlett Gabriela Pérez Silva
             </p>
 
-            <p> 
-                <a href="references.html">References</a> 
+            <p>
+                <a href="references.html">
+                    References
+                </a>
             </p>
 
         </div>

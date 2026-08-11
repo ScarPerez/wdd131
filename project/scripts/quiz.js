@@ -1,7 +1,6 @@
 /* =========================================
-   RF1 - QUIZ
-   ========================================= */
-
+RF1 - QUIZ
+========================================= */
 
 const questions = [
 
@@ -77,6 +76,13 @@ const questions = [
 ];
 
 
+/* =========================================
+ELEMENTS
+========================================= */
+
+const quizForm =
+    document.querySelector("#quiz-form");
+
 const startButton =
     document.querySelector("#start-quiz");
 
@@ -110,13 +116,29 @@ const resultMessage =
 const restartButton =
     document.querySelector("#restart-quiz");
 
+const currentYear =
+    document.querySelector("#current-year");
+
 
 let currentQuestion = 0;
 
 let score = 0;
 
 
-/* START QUIZ */
+/* =========================================
+PREVENT FORM SUBMISSION
+========================================= */
+
+quizForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+});
+
+
+/* =========================================
+START QUIZ
+========================================= */
 
 startButton.addEventListener("click", () => {
 
@@ -137,7 +159,9 @@ startButton.addEventListener("click", () => {
 });
 
 
-/* LOAD QUESTION */
+/* =========================================
+LOAD QUESTION
+========================================= */
 
 function loadQuestion() {
 
@@ -171,6 +195,8 @@ function loadQuestion() {
 
         button.classList.add("answer-button");
 
+        button.type = "button";
+
 
         button.textContent =
             answer;
@@ -193,7 +219,9 @@ function loadQuestion() {
 }
 
 
-/* SELECT ANSWER */
+/* =========================================
+SELECT ANSWER
+========================================= */
 
 function selectAnswer(event) {
 
@@ -244,7 +272,9 @@ function selectAnswer(event) {
 }
 
 
-/* NEXT QUESTION */
+/* =========================================
+NEXT QUESTION
+========================================= */
 
 nextButton.addEventListener("click", () => {
 
@@ -264,11 +294,14 @@ nextButton.addEventListener("click", () => {
 });
 
 
-/* FINISH QUIZ */
+/* =========================================
+FINISH QUIZ
+========================================= */
 
 function finishQuiz() {
 
     quizSection.classList.remove("active");
+
 
     finalScore.textContent =
         score;
@@ -300,6 +333,7 @@ function finishQuiz() {
 
     quizResult.classList.add("show");
 
+
     quizResult.scrollIntoView({
         behavior: "smooth"
     });
@@ -307,7 +341,9 @@ function finishQuiz() {
 }
 
 
-/* RESTART */
+/* =========================================
+RESTART
+========================================= */
 
 restartButton.addEventListener("click", () => {
 
@@ -324,11 +360,9 @@ restartButton.addEventListener("click", () => {
 });
 
 
-/* CURRENT YEAR */
-
-const currentYear =
-    document.querySelector("#current-year");
-
+/* =========================================
+CURRENT YEAR
+========================================= */
 
 if (currentYear) {
 
