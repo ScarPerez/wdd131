@@ -977,6 +977,301 @@ blockquote {
     transform: rotate(45deg);
 }
 
+/* ---------- DRIVERS PAGE ---------- */
+
+.drivers-hero {
+
+    min-height: 65vh;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 120px 8% 80px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(29, 61, 94, 0.90),
+            rgba(29, 61, 94, 0.95)
+        );
+
+}
+
+
+.drivers-hero-content {
+
+    max-width: 800px;
+
+}
+
+
+.drivers-hero h1 {
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(4rem, 9vw, 7rem);
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+
+}
+
+
+.drivers-hero p:not(.eyebrow) {
+
+    max-width: 550px;
+
+    font-size: 1.1rem;
+
+    font-weight: 300;
+
+}
+
+
+/* ---------- DRIVER DIRECTORY ---------- */
+
+.drivers-section {
+
+    padding: 120px 8%;
+
+    background: var(--white);
+
+}
+
+
+/* ---------- SEARCH ---------- */
+
+.driver-controls {
+
+    max-width: 600px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.driver-controls label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--deep-blue);
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+.driver-controls input {
+
+    width: 100%;
+
+    padding: 18px 20px;
+
+    border: 1px solid #ccd5dc;
+
+    background: var(--light-bg);
+
+    color: var(--dark-text);
+
+    font-family: var(--body-font);
+
+    font-size: 1rem;
+
+    outline: none;
+
+}
+
+
+.driver-controls input:focus {
+
+    border-color: var(--deep-blue);
+
+}
+
+
+/* ---------- FILTERS ---------- */
+
+.team-filters {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.filter-button {
+
+    padding: 10px 18px;
+
+    border: 1px solid #ccd5dc;
+
+    background: white;
+
+    color: var(--deep-blue);
+
+    font-family: var(--body-font);
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.filter-button:hover,
+.filter-button.active {
+
+    background: var(--deep-blue);
+
+    color: white;
+
+    border-color: var(--deep-blue);
+
+}
+
+
+/* ---------- DRIVER GRID ---------- */
+
+.drivers-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.driver-card {
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 30px;
+
+    background: var(--light-bg);
+
+    border: 1px solid #e1e7ec;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+.driver-card:hover {
+
+    transform: translateY(-6px);
+
+    background: #edf3f8;
+
+}
+
+
+.driver-number {
+
+    font-family: var(--heading-font);
+
+    color: var(--soft-blue);
+
+    font-size: 4rem;
+
+    line-height: 1;
+
+}
+
+
+.driver-card-content {
+
+    margin-top: 50px;
+
+}
+
+
+.driver-team {
+
+    margin-bottom: 8px;
+
+    color: var(--muted-blue);
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.driver-card h3 {
+
+    font-family: var(--heading-font);
+
+    color: var(--deep-blue);
+
+    font-size: 2rem;
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    margin-bottom: 10px;
+
+}
+
+
+.driver-country {
+
+    font-size: 0.85rem;
+
+}
+
+
+.no-results {
+
+    display: none;
+
+    padding: 40px 0;
+
+    color: var(--muted-blue);
+
+}
+
 /* ---------- RESPONSIVE DESIGN ---------- */
 
 @media (max-width: 800px) {
@@ -1125,4 +1420,56 @@ blockquote {
     .site-footer {
     padding: 50px 7%;
 }
+
+    /* ---------- DRIVERS PAGE ---------- */
+
+    .drivers-hero {
+
+        min-height: 60vh;
+
+        padding: 110px 7% 70px;
+
+    }
+
+
+    .drivers-hero h1 {
+
+        font-size: clamp(3.5rem, 14vw, 5rem);
+
+    }
+
+
+    .drivers-section {
+
+        padding: 80px 7%;
+
+    }
+
+
+    .drivers-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .team-filters {
+
+        gap: 8px;
+
+    }
+
+
+    .filter-button {
+
+        padding: 9px 13px;
+
+    }
+
+
+    .driver-card {
+
+        min-height: 270px;
+
+    }
 
