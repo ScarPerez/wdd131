@@ -28,10 +28,13 @@
     <header class="site-header">
 
         <a class="logo-link" href="index.html">
-            <img src="images/RF1-logo.png" alt="RF1 Formula 1 Rookie Guide logo">
+            <img src="images/rf1-logo.png" alt="RF1 Formula 1 Rookie Guide logo">
         </a>
 
-        <button class="menu-button" aria-label="Open navigation menu">
+        <button
+            class="menu-button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
             ☰
         </button>
 
@@ -243,10 +246,223 @@
 
         </section>
 
+        <!-- F1 DICTIONARY -->
+
+        <section class="dictionary-section section" id="dictionary">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    F1 DICTIONARY
+                </p>
+
+                <h2>
+                    Learn the language of Formula 1.
+                </h2>
+
+                <p>
+                    F1 has a language of its own. Start with some of
+                    the terms you will hear most often during a race weekend.
+                </p>
+
+            </div>
+
+
+            <div class="dictionary-grid">
+
+                <article class="term-card">
+
+                    <button class="term-button">
+
+                        <span>
+                            DRS
+                        </span>
+
+                        <span class="term-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="term-definition">
+
+                        <h3>
+                            Drag Reduction System
+                        </h3>
+
+                        <p>
+                            A system that reduces aerodynamic drag on
+                            certain parts of the car, allowing it to
+                            reach higher speeds on designated sections
+                            of the track.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="term-card">
+
+                    <button class="term-button">
+
+                        <span>
+                            DNF
+                        </span>
+
+                        <span class="term-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="term-definition">
+
+                        <h3>
+                            Did Not Finish
+                        </h3>
+
+                        <p>
+                            Used when a driver starts a race but is unable
+                            to complete it because of an incident,
+                            mechanical problem, or another reason.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="term-card">
+
+                    <button class="term-button">
+
+                        <span>
+                            POLE
+                        </span>
+
+                        <span class="term-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="term-definition">
+
+                        <h3>
+                            Pole Position
+                        </h3>
+
+                        <p>
+                            The first position on the starting grid.
+                            It is normally awarded to the driver who
+                            sets the fastest qualifying time.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="term-card">
+
+                    <button class="term-button">
+
+                        <span>
+                            PIT STOP
+                        </span>
+
+                        <span class="term-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="term-definition">
+
+                        <h3>
+                            Pit Stop
+                        </h3>
+
+                        <p>
+                            A stop in the pit lane where the team can
+                            change tires and perform other necessary
+                            work on the car.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="term-card">
+
+                    <button class="term-button">
+
+                        <span>
+                            GRID
+                        </span>
+
+                        <span class="term-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="term-definition">
+
+                        <h3>
+                            Starting Grid
+                        </h3>
+
+                        <p>
+                            The positions where the cars line up before
+                            the start of a Grand Prix.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="term-card">
+
+                    <button class="term-button">
+
+                        <span>
+                            SAFETY CAR
+                        </span>
+
+                        <span class="term-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="term-definition">
+
+                        <h3>
+                            Safety Car
+                        </h3>
+
+                        <p>
+                            A vehicle that leads the field at a controlled
+                            speed during certain incidents when racing
+                            conditions are temporarily unsafe.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
 
         <!-- RACE WEEKEND -->
 
-        <section class="race-weekend">
+        <section class="race-weekend" id="race-guide">
 
             <div class="race-content">
 
@@ -255,24 +471,124 @@
                 </p>
 
                 <h2>
-                    From lights out<br>
-                    to the chequered flag.
+                    Three stages.<br>
+                    One Grand Prix.
                 </h2>
 
                 <p>
-                    A Formula 1 weekend is more than one race.
-                    Discover what happens from practice and
-                    qualifying to the Grand Prix.
+                    A Formula 1 Grand Prix weekend is more than just
+                    the race. Learn what happens before the lights go out.
                 </p>
 
-                <a href="#race-guide" class="button button-light">
-                    Explore Race Weekend
-                </a>
+            </div>
+
+
+            <div class="race-timeline">
+
+                <button class="race-step active" data-step="practice">
+
+                    <span class="step-number">
+                        01
+                    </span>
+
+                    <span class="step-name">
+                        Practice
+                    </span>
+
+                </button>
+
+
+                <button class="race-step" data-step="qualifying">
+
+                    <span class="step-number">
+                        02
+                    </span>
+
+                    <span class="step-name">
+                        Qualifying
+                    </span>
+
+                </button>
+
+
+                <button class="race-step" data-step="race">
+
+                    <span class="step-number">
+                        03
+                    </span>
+
+                    <span class="step-name">
+                        Race
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="race-info">
+
+                <div class="race-panel active" id="practice">
+
+                    <p class="panel-label">
+                        01 / PRACTICE
+                    </p>
+
+                    <h3>
+                        Find the rhythm.
+                    </h3>
+
+                    <p>
+                        Practice sessions give drivers and teams time
+                        to learn the circuit, test the car, compare
+                        setups, and prepare for qualifying and the race.
+                    </p>
+
+                </div>
+
+
+                <div class="race-panel" id="qualifying">
+
+                    <p class="panel-label">
+                        02 / QUALIFYING
+                    </p>
+
+                    <h3>
+                        Fight for position.
+                    </h3>
+
+                    <p>
+                        Qualifying determines the starting order for
+                        the Grand Prix. Drivers push for their fastest
+                        possible lap as they compete for the best
+                        position on the grid.
+                    </p>
+
+                </div>
+
+
+                <div class="race-panel" id="race">
+
+                    <p class="panel-label">
+                        03 / RACE
+                    </p>
+
+                    <h3>
+                        Lights out.
+                    </h3>
+
+                    <p>
+                        This is the main event. Drivers compete over
+                        the Grand Prix distance while managing tires,
+                        strategy, fuel, traffic, and changing race
+                        conditions.
+                    </p>
+
+                </div>
 
             </div>
 
         </section>
-
 
         <!-- QUIZ CTA -->
 
@@ -322,7 +638,7 @@
 
         <div class="footer-logo">
 
-            <img src="images/RF1-logo.png"
+            <img src="images/rf1-logo.png"
                 alt="RF1 logo">
 
         </div>
