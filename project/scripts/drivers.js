@@ -1,68 +1,191 @@
 /* =========================================
-   RF1 - DRIVERS
+   RF1 - 2026 F1 DRIVERS
    ========================================= */
-
 
 const drivers = [
 
     {
         name: "Lando Norris",
         number: 1,
-        team: "mclaren",
-        country: "United Kingdom"
+        team: "McLaren",
+        nationality: "United Kingdom",
+        teamFilter: "mclaren"
     },
 
     {
         name: "Oscar Piastri",
         number: 81,
-        team: "mclaren",
-        country: "Australia"
-    },
-
-    {
-        name: "Charles Leclerc",
-        number: 16,
-        team: "ferrari",
-        country: "Monaco"
-    },
-
-    {
-        name: "Lewis Hamilton",
-        number: 44,
-        team: "ferrari",
-        country: "United Kingdom"
+        team: "McLaren",
+        nationality: "Australia",
+        teamFilter: "mclaren"
     },
 
     {
         name: "George Russell",
         number: 63,
-        team: "mercedes",
-        country: "United Kingdom"
+        team: "Mercedes",
+        nationality: "United Kingdom",
+        teamFilter: "mercedes"
     },
 
     {
         name: "Kimi Antonelli",
         number: 12,
-        team: "mercedes",
-        country: "Italy"
+        team: "Mercedes",
+        nationality: "Italy",
+        teamFilter: "mercedes"
+    },
+
+    {
+        name: "Charles Leclerc",
+        number: 16,
+        team: "Ferrari",
+        nationality: "Monaco",
+        teamFilter: "ferrari"
+    },
+
+    {
+        name: "Lewis Hamilton",
+        number: 44,
+        team: "Ferrari",
+        nationality: "United Kingdom",
+        teamFilter: "ferrari"
     },
 
     {
         name: "Max Verstappen",
         number: 3,
-        team: "red-bull",
-        country: "Netherlands"
+        team: "Red Bull Racing",
+        nationality: "Netherlands",
+        teamFilter: "red-bull"
+    },
+
+    {
+        name: "Isack Hadjar",
+        number: 6,
+        team: "Red Bull Racing",
+        nationality: "France",
+        teamFilter: "red-bull"
+    },
+
+    {
+        name: "Liam Lawson",
+        number: 30,
+        team: "Racing Bulls",
+        nationality: "New Zealand",
+        teamFilter: "racing-bulls"
+    },
+
+    {
+        name: "Arvid Lindblad",
+        number: 41,
+        team: "Racing Bulls",
+        nationality: "United Kingdom",
+        teamFilter: "racing-bulls"
+    },
+
+    {
+        name: "Pierre Gasly",
+        number: 10,
+        team: "Alpine",
+        nationality: "France",
+        teamFilter: "alpine"
+    },
+
+    {
+        name: "Franco Colapinto",
+        number: 43,
+        team: "Alpine",
+        nationality: "Argentina",
+        teamFilter: "alpine"
+    },
+
+    {
+        name: "Esteban Ocon",
+        number: 31,
+        team: "Haas",
+        nationality: "France",
+        teamFilter: "haas"
+    },
+
+    {
+        name: "Oliver Bearman",
+        number: 87,
+        team: "Haas",
+        nationality: "United Kingdom",
+        teamFilter: "haas"
+    },
+
+    {
+        name: "Nico Hulkenberg",
+        number: 27,
+        team: "Audi",
+        nationality: "Germany",
+        teamFilter: "audi"
+    },
+
+    {
+        name: "Gabriel Bortoleto",
+        number: 5,
+        team: "Audi",
+        nationality: "Brazil",
+        teamFilter: "audi"
+    },
+
+    {
+        name: "Carlos Sainz",
+        number: 55,
+        team: "Williams",
+        nationality: "Spain",
+        teamFilter: "williams"
+    },
+
+    {
+        name: "Alexander Albon",
+        number: 23,
+        team: "Williams",
+        nationality: "Thailand",
+        teamFilter: "williams"
     },
 
     {
         name: "Fernando Alonso",
         number: 14,
-        team: "aston-martin",
-        country: "Spain"
+        team: "Aston Martin",
+        nationality: "Spain",
+        teamFilter: "aston-martin"
+    },
+
+    {
+        name: "Lance Stroll",
+        number: 18,
+        team: "Aston Martin",
+        nationality: "Canada",
+        teamFilter: "aston-martin"
+    },
+
+    {
+        name: "Sergio Perez",
+        number: 11,
+        team: "Cadillac",
+        nationality: "Mexico",
+        teamFilter: "cadillac"
+    },
+
+    {
+        name: "Valtteri Bottas",
+        number: 77,
+        team: "Cadillac",
+        nationality: "Finland",
+        teamFilter: "cadillac"
     }
 
 ];
 
+
+/* =========================================
+   ELEMENTS
+   ========================================= */
 
 const driversGrid =
     document.querySelector("#drivers-grid");
@@ -71,7 +194,7 @@ const searchInput =
     document.querySelector("#driver-search");
 
 const filterButtons =
-    document.querySelectorAll(".filter-button");
+    document.querySelectorAll(".driver-filter");
 
 const noResults =
     document.querySelector("#no-results");
@@ -79,6 +202,10 @@ const noResults =
 
 let selectedTeam = "all";
 
+
+/* =========================================
+   DISPLAY DRIVERS
+   ========================================= */
 
 function displayDrivers(driverList) {
 
@@ -114,15 +241,15 @@ function displayDrivers(driverList) {
             <div class="driver-card-content">
 
                 <p class="driver-team">
-                    ${formatTeamName(driver.team)}
+                    ${driver.team}
                 </p>
 
                 <h3>
                     ${driver.name}
                 </h3>
 
-                <p class="driver-country">
-                    ${driver.country}
+                <p class="driver-nationality">
+                    ${driver.nationality}
                 </p>
 
             </div>
@@ -137,49 +264,42 @@ function displayDrivers(driverList) {
 }
 
 
-function formatTeamName(team) {
-
-    const names = {
-
-        "mclaren": "McLaren",
-
-        "ferrari": "Ferrari",
-
-        "mercedes": "Mercedes",
-
-        "red-bull": "Red Bull",
-
-        "aston-martin": "Aston Martin"
-
-    };
-
-
-    return names[team] || team;
-
-}
-
+/* =========================================
+   FILTER DRIVERS
+   ========================================= */
 
 function filterDrivers() {
 
     const searchTerm =
-        searchInput.value.toLowerCase().trim();
+        searchInput.value
+            .toLowerCase()
+            .trim();
 
 
     const filteredDrivers =
         drivers.filter((driver) => {
 
-            const matchesTeam =
-                selectedTeam === "all" ||
-                driver.team === selectedTeam;
-
-
             const matchesSearch =
                 driver.name
+                    .toLowerCase()
+                    .includes(searchTerm)
+                ||
+                driver.team
+                    .toLowerCase()
+                    .includes(searchTerm)
+                ||
+                driver.nationality
                     .toLowerCase()
                     .includes(searchTerm);
 
 
-            return matchesTeam && matchesSearch;
+            const matchesTeam =
+                selectedTeam === "all"
+                ||
+                driver.teamFilter === selectedTeam;
+
+
+            return matchesSearch && matchesTeam;
 
         });
 
@@ -189,7 +309,9 @@ function filterDrivers() {
 }
 
 
-/* SEARCH */
+/* =========================================
+   SEARCH
+   ========================================= */
 
 searchInput.addEventListener(
     "input",
@@ -197,7 +319,9 @@ searchInput.addEventListener(
 );
 
 
-/* TEAM FILTER */
+/* =========================================
+   TEAM FILTERS
+   ========================================= */
 
 filterButtons.forEach((button) => {
 
@@ -224,15 +348,20 @@ filterButtons.forEach((button) => {
 });
 
 
-/* INITIAL DISPLAY */
+/* =========================================
+   INITIAL DISPLAY
+   ========================================= */
 
 displayDrivers(drivers);
 
 
-/* CURRENT YEAR */
+/* =========================================
+   CURRENT YEAR
+   ========================================= */
 
 const currentYear =
     document.querySelector("#current-year");
+
 
 if (currentYear) {
 
