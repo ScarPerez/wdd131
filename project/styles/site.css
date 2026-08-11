@@ -1272,6 +1272,187 @@ blockquote {
 
 }
 
+/* ---------- TEAMS PAGE ---------- */
+
+.teams-hero {
+
+    min-height: 65vh;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 120px 8% 80px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(29, 61, 94, 0.90),
+            rgba(29, 61, 94, 0.95)
+        );
+
+}
+
+
+.teams-hero-content {
+
+    max-width: 800px;
+
+}
+
+
+.teams-hero h1 {
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(4rem, 9vw, 7rem);
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+
+}
+
+
+.teams-hero p:not(.eyebrow) {
+
+    max-width: 600px;
+
+    font-size: 1.1rem;
+
+    font-weight: 300;
+
+}
+
+
+/* ---------- TEAM DIRECTORY ---------- */
+
+.teams-section {
+
+    padding: 120px 8%;
+
+    background: var(--white);
+
+}
+
+
+/* ---------- TEAM CARDS ---------- */
+
+.teams-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.team-card {
+
+    min-height: 320px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 35px;
+
+    background: var(--light-bg);
+
+    border: 1px solid #e1e7ec;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+.team-card:hover {
+
+    transform: translateY(-6px);
+
+    background: #edf3f8;
+
+}
+
+
+.team-abbreviation {
+
+    font-family: var(--heading-font);
+
+    color: var(--soft-blue);
+
+    font-size: 4rem;
+
+    line-height: 1;
+
+}
+
+
+.team-card-content {
+
+    margin-top: 60px;
+
+}
+
+
+.team-label {
+
+    margin-bottom: 8px;
+
+    color: var(--muted-blue);
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+}
+
+
+.team-card h3 {
+
+    font-family: var(--heading-font);
+
+    color: var(--deep-blue);
+
+    font-size: 2.2rem;
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    margin-bottom: 12px;
+
+}
+
+
+.team-base {
+
+    font-size: 0.85rem;
+
+}
+
+
+.no-team-results {
+
+    display: none;
+
+    padding: 40px 0;
+
+    color: var(--muted-blue);
+
+}
+
 /* ---------- RESPONSIVE DESIGN ---------- */
 
 @media (max-width: 800px) {
