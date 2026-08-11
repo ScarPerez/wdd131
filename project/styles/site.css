@@ -1,4 +1,3 @@
-```css
 /* =========================================
    RF1 - FORMULA 1 ROOKIE GUIDE
    MAIN STYLESHEET
@@ -880,10 +879,20 @@ input {
 
 
 /* =========================================
-   QUOTE
+   RF1 SLOGAN
 ========================================= */
 
 .quote-section {
+
+    min-height: 380px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
 
     padding: 100px 8%;
 
@@ -895,30 +904,19 @@ input {
 
 }
 
-blockquote {
+.quote-section blockquote {
 
     font-family: var(--heading-font);
 
-    font-size: clamp(2rem, 4vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 5rem);
 
     line-height: 1.1;
 
-    max-width: 900px;
+    max-width: 1000px;
 
-    margin: auto;
-
-}
-
-.quote-section p {
-
-    margin-top: 25px;
-
-    font-size: 0.8rem;
-
-    letter-spacing: 2px;
+    margin: 0 auto;
 
 }
-
 
 /* =========================================
    FOOTER
@@ -2185,4 +2183,3 @@ blockquote {
     }
 
 }
-```
