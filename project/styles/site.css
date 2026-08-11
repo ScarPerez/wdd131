@@ -1,10 +1,13 @@
+```css
 /* =========================================
    RF1 - FORMULA 1 ROOKIE GUIDE
-   Main Stylesheet
-   ========================================= */
+   MAIN STYLESHEET
+========================================= */
 
 
-/* ---------- RESET ---------- */
+/* =========================================
+   RESET
+========================================= */
 
 * {
     margin: 0;
@@ -12,11 +15,9 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     font-family: "Inter", sans-serif;
@@ -25,20 +26,25 @@ body {
     line-height: 1.6;
 }
 
-
 img {
     max-width: 100%;
     display: block;
 }
-
 
 a {
     color: inherit;
     text-decoration: none;
 }
 
+button,
+input {
+    font: inherit;
+}
 
-/* ---------- VARIABLES ---------- */
+
+/* =========================================
+   VARIABLES
+========================================= */
 
 :root {
 
@@ -50,13 +56,17 @@ a {
     --light-bg: #F5F8FB;
     --dark-text: #2D2D2D;
 
+    --border: #d8e0e7;
+
     --heading-font: "DM Serif Display", serif;
     --body-font: "Inter", sans-serif;
 
 }
 
 
-/* ---------- HEADER ---------- */
+/* =========================================
+   HEADER
+========================================= */
 
 .site-header {
 
@@ -67,7 +77,7 @@ a {
 
     width: 100%;
 
-    z-index: 10;
+    z-index: 100;
 
     display: flex;
 
@@ -81,13 +91,11 @@ a {
 
 }
 
-
 .logo-link img {
 
     width: 75px;
 
 }
-
 
 .navigation {
 
@@ -96,7 +104,6 @@ a {
     gap: 35px;
 
 }
-
 
 .navigation a {
 
@@ -112,14 +119,12 @@ a {
 
 }
 
-
 .navigation a:hover,
 .navigation a.active {
 
     opacity: 0.65;
 
 }
-
 
 .menu-button {
 
@@ -133,10 +138,14 @@ a {
 
     font-size: 1.8rem;
 
+    cursor: pointer;
+
 }
 
 
-/* ---------- HERO ---------- */
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
 
@@ -153,15 +162,26 @@ a {
     color: white;
 
     background:
-        linear-gradient(
-            rgba(29, 61, 94, 0.78),
-            rgba(29, 61, 94, 0.88)
-        ),
-        url("../images/hero.jpg")
+        url("../images/home/hero.webp")
         center / cover no-repeat;
 
 }
 
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(29, 61, 94, 0.88),
+            rgba(29, 61, 94, 0.55),
+            rgba(29, 61, 94, 0.20)
+        );
+
+}
 
 .hero-content {
 
@@ -172,7 +192,6 @@ a {
     max-width: 720px;
 
 }
-
 
 .eyebrow {
 
@@ -188,7 +207,6 @@ a {
 
 }
 
-
 .hero h1 {
 
     font-family: var(--heading-font);
@@ -203,7 +221,6 @@ a {
 
 }
 
-
 .hero-text {
 
     max-width: 520px;
@@ -216,16 +233,17 @@ a {
 
 }
 
-
 .button {
 
     display: inline-block;
 
+    padding: 15px 28px;
+
+    border: 1px solid white;
+
     background: white;
 
     color: var(--deep-blue);
-
-    padding: 15px 28px;
 
     font-size: 0.8rem;
 
@@ -239,22 +257,15 @@ a {
 
 }
 
-
 .button:hover {
 
     transform: translateY(-3px);
 
-}
+    background: transparent;
 
-
-.button-light {
-
-    background: white;
-
-    color: var(--deep-blue);
+    color: white;
 
 }
-
 
 .scroll-indicator {
 
@@ -280,7 +291,6 @@ a {
 
 }
 
-
 .arrow {
 
     font-size: 1.2rem;
@@ -288,7 +298,9 @@ a {
 }
 
 
-/* ---------- GENERAL SECTIONS ---------- */
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
 
 .section {
 
@@ -296,37 +308,11 @@ a {
 
 }
 
-
-.intro {
-
-    display: grid;
-
-    grid-template-columns: 1.1fr 1fr;
-
-    gap: 80px;
-
-    align-items: center;
-
-}
-
-
-.section-image img {
-
-    width: 100%;
-
-    height: 550px;
-
-    object-fit: cover;
-
-}
-
-
 .section-content {
 
     max-width: 550px;
 
 }
-
 
 .section-content h2,
 .section-heading h2,
@@ -346,13 +332,25 @@ a {
 
 }
 
-
 .section-content p {
 
     margin-bottom: 20px;
 
 }
 
+.section-heading {
+
+    max-width: 650px;
+
+    margin-bottom: 55px;
+
+}
+
+.section-heading > p:last-child {
+
+    margin-top: 15px;
+
+}
 
 .text-link {
 
@@ -367,30 +365,42 @@ a {
 }
 
 
-/* ---------- START SECTION ---------- */
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.intro {
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+.section-image img {
+
+    width: 100%;
+
+    height: 550px;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================================
+   START HERE
+========================================= */
 
 .start-section {
 
     background: var(--light-bg);
 
 }
-
-
-.section-heading {
-
-    max-width: 650px;
-
-    margin-bottom: 55px;
-
-}
-
-
-.section-heading > p:last-child {
-
-    margin-top: 15px;
-
-}
-
 
 .guide-grid {
 
@@ -402,8 +412,9 @@ a {
 
 }
 
-
 .guide-card {
+
+    display: block;
 
     background: white;
 
@@ -413,13 +424,11 @@ a {
 
 }
 
-
 .guide-card:hover {
 
     transform: translateY(-8px);
 
 }
-
 
 .guide-card-image {
 
@@ -429,51 +438,51 @@ a {
 
     background-size: cover;
 
+    background-repeat: no-repeat;
+
 }
 
+
+/* ---------- HOME IMAGES ---------- */
 
 .drivers-image {
 
     background-image:
         linear-gradient(
-            rgba(29, 61, 94, 0.25),
-            rgba(29, 61, 94, 0.25)
+            rgba(29, 61, 94, 0.20),
+            rgba(29, 61, 94, 0.20)
         ),
-        url("../images/drivers.jpg");
+        url("../images/home/parrilla.webp");
 
 }
-
 
 .teams-image {
 
     background-image:
         linear-gradient(
-            rgba(29, 61, 94, 0.25),
-            rgba(29, 61, 94, 0.25)
+            rgba(29, 61, 94, 0.20),
+            rgba(29, 61, 94, 0.20)
         ),
-        url("../images/teams.jpg");
+        url("../images/home/podio.webp");
 
 }
-
 
 .dictionary-image {
 
     background-image:
         linear-gradient(
-            rgba(29, 61, 94, 0.25),
-            rgba(29, 61, 94, 0.25)
+            rgba(29, 61, 94, 0.35),
+            rgba(29, 61, 94, 0.35)
         ),
-        url("../images/dictionary.jpg");
+        url("../images/home/grid.webp");
 
 }
-
 
 .guide-card-content {
 
     padding: 30px;
 
 }
-
 
 .card-number {
 
@@ -484,7 +493,6 @@ a {
     letter-spacing: 2px;
 
 }
-
 
 .guide-card h3 {
 
@@ -500,7 +508,6 @@ a {
 
 }
 
-
 .guide-card-content p {
 
     font-size: 0.9rem;
@@ -508,7 +515,6 @@ a {
     margin-bottom: 20px;
 
 }
-
 
 .card-link {
 
@@ -525,370 +531,38 @@ a {
 }
 
 
-/* ---------- RACE WEEKEND ---------- */
-
-.race-weekend {
-
-    min-height: 85vh;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 80px;
-
-    align-items: center;
-
-    padding: 120px 8%;
-
-    color: white;
-
-    background:
-        linear-gradient(
-            rgba(29, 61, 94, 0.90),
-            rgba(29, 61, 94, 0.95)
-        );
-
-}
-
-
-.race-content {
-
-    max-width: 600px;
-
-}
-
-
-.race-content h2 {
-
-    font-family: var(--heading-font);
-
-    font-size: clamp(3rem, 6vw, 5rem);
-
-    line-height: 1;
-
-    font-weight: 400;
-
-    margin-bottom: 25px;
-
-}
-
-
-.race-content p:not(.eyebrow) {
-
-    max-width: 500px;
-
-    margin-bottom: 30px;
-
-    font-weight: 300;
-
-}
-
-
-/* ---------- RACE TIMELINE ---------- */
-
-.race-timeline {
-
-    display: flex;
-
-    flex-direction: column;
-
-    border-left: 1px solid rgba(255, 255, 255, 0.35);
-
-}
-
-
-.race-step {
-
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns: 70px 1fr;
-
-    align-items: center;
-
-    gap: 20px;
-
-    padding: 25px 30px;
-
-    border: none;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
-    background: transparent;
-
-    color: white;
-
-    font-family: var(--body-font);
-
-    text-align: left;
-
-    cursor: pointer;
-
-    transition: background 0.3s ease;
-
-}
-
-
-.race-step:first-child {
-
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-
-}
-
-
-.race-step:hover,
-.race-step.active {
-
-    background: rgba(255, 255, 255, 0.10);
-
-}
-
-
-.step-number {
-
-    font-size: 0.7rem;
-
-    letter-spacing: 2px;
-
-    opacity: 0.6;
-
-}
-
-
-.step-name {
-
-    font-family: var(--heading-font);
-
-    font-size: 1.7rem;
-
-}
-
-
-/* ---------- RACE INFORMATION ---------- */
-
-.race-info {
-
-    grid-column: 1 / -1;
-
-    min-height: 190px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-
-    padding-top: 45px;
-
-}
-
-
-.race-panel {
-
-    display: none;
-
-    max-width: 800px;
-
-}
-
-
-.race-panel.active {
-
-    display: block;
-
-}
-
-
-.panel-label {
-
-    font-size: 0.7rem;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 10px;
-
-    opacity: 0.65;
-
-}
-
-
-.race-panel h3 {
-
-    font-family: var(--heading-font);
-
-    font-size: 2.4rem;
-
-    font-weight: 400;
-
-    margin-bottom: 10px;
-
-}
-
-
-.race-panel p:last-child {
-
-    max-width: 700px;
-
-    font-size: 0.95rem;
-
-    font-weight: 300;
-
-}
-
-
-/* ---------- QUIZ ---------- */
-
-.quiz-cta {
-
-    text-align: center;
-
-}
-
-
-.quiz-content {
-
-    max-width: 700px;
-
-    margin: auto;
-
-}
-
-
-.quiz-content p:not(.eyebrow) {
-
-    margin-bottom: 30px;
-
-}
-
-
-/* ---------- QUOTE ---------- */
-
-.quote-section {
-
-    padding: 100px 8%;
-
-    text-align: center;
-
-    background: var(--deep-blue);
-
-    color: white;
-
-}
-
-
-blockquote {
-
-    font-family: var(--heading-font);
-
-    font-size: clamp(2rem, 4vw, 4rem);
-
-    line-height: 1.1;
-
-    max-width: 900px;
-
-    margin: auto;
-
-}
-
-
-.quote-section p {
-
-    margin-top: 25px;
-
-    font-size: 0.8rem;
-
-    letter-spacing: 2px;
-
-}
-
-
-/* ---------- FOOTER ---------- */
-
-.site-footer {
-
-    background: #132B42;
-
-    color: white;
-
-    padding: 60px 8% 25px;
-
-}
-
-
-.footer-logo img {
-
-    width: 70px;
-
-    margin-bottom: 25px;
-
-}
-
-
-.footer-content p:first-child {
-
-    font-family: var(--heading-font);
-
-    font-size: 1.8rem;
-
-}
-
-
-.footer-content p:last-child {
-
-    color: var(--soft-blue);
-
-    margin-top: 5px;
-
-}
-
-
-.footer-bottom {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    border-top: 1px solid rgba(255,255,255,0.2);
-
-    margin-top: 50px;
-
-    padding-top: 20px;
-
-    font-size: 0.75rem;
-
-}
-
-
-.footer-bottom a {
-
-    color: var(--soft-blue);
-
-}
-
-/* ---------- F1 DICTIONARY ---------- */
+/* =========================================
+   F1 DICTIONARY
+========================================= */
 
 .dictionary-section {
+
     background: var(--white);
+
 }
 
-
 .dictionary-grid {
+
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
 
     gap: 1px;
 
-    background: #d8e0e7;
+    background: var(--border);
 
-    border: 1px solid #d8e0e7;
+    border: 1px solid var(--border);
+
 }
-
 
 .term-card {
+
     background: white;
+
 }
 
-
 .term-button {
+
     width: 100%;
 
     display: flex;
@@ -916,24 +590,27 @@ blockquote {
     text-align: left;
 
     cursor: pointer;
-}
 
+}
 
 .term-button:hover {
+
     background: var(--light-bg);
+
 }
 
-
 .term-icon {
+
     font-size: 1.5rem;
 
     font-weight: 300;
 
     transition: transform 0.3s ease;
+
 }
 
-
 .term-definition {
+
     max-height: 0;
 
     overflow: hidden;
@@ -943,10 +620,11 @@ blockquote {
     transition:
         max-height 0.4s ease,
         padding 0.4s ease;
+
 }
 
-
 .term-definition h3 {
+
     font-family: var(--heading-font);
 
     color: var(--deep-blue);
@@ -956,28 +634,356 @@ blockquote {
     font-weight: 400;
 
     margin-bottom: 10px;
+
 }
 
-
 .term-definition p {
+
     font-size: 0.9rem;
 
     padding-bottom: 25px;
+
 }
 
-
 .term-card.open .term-definition {
+
     max-height: 250px;
 
     padding-top: 5px;
-}
 
+}
 
 .term-card.open .term-icon {
+
     transform: rotate(45deg);
+
 }
 
-/* ---------- DRIVERS PAGE ---------- */
+
+/* =========================================
+   RACE WEEKEND
+========================================= */
+
+.race-weekend {
+
+    min-height: 85vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    padding: 120px 8%;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(29, 61, 94, 0.82),
+            rgba(29, 61, 94, 0.90)
+        ),
+        url("../images/home/grid.webp")
+        center / cover no-repeat;
+
+}
+
+.race-content {
+
+    max-width: 600px;
+
+}
+
+.race-content h2 {
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(3rem, 6vw, 5rem);
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+
+}
+
+.race-content p:not(.eyebrow) {
+
+    max-width: 500px;
+
+    margin-bottom: 30px;
+
+    font-weight: 300;
+
+}
+
+.race-timeline {
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-left: 1px solid rgba(255,255,255,0.35);
+
+}
+
+.race-step {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 70px 1fr;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px 30px;
+
+    border: none;
+
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+
+    background: transparent;
+
+    color: white;
+
+    font-family: var(--body-font);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+
+}
+
+.race-step:first-child {
+
+    border-top: 1px solid rgba(255,255,255,0.2);
+
+}
+
+.race-step:hover,
+.race-step.active {
+
+    background: rgba(255,255,255,0.10);
+
+}
+
+.step-number {
+
+    font-size: 0.7rem;
+
+    letter-spacing: 2px;
+
+    opacity: 0.6;
+
+}
+
+.step-name {
+
+    font-family: var(--heading-font);
+
+    font-size: 1.7rem;
+
+}
+
+.race-info {
+
+    grid-column: 1 / -1;
+
+    min-height: 190px;
+
+    border-top: 1px solid rgba(255,255,255,0.2);
+
+    padding-top: 45px;
+
+}
+
+.race-panel {
+
+    display: none;
+
+    max-width: 800px;
+
+}
+
+.race-panel.active {
+
+    display: block;
+
+}
+
+.panel-label {
+
+    font-size: 0.7rem;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+
+    opacity: 0.65;
+
+}
+
+.race-panel h3 {
+
+    font-family: var(--heading-font);
+
+    font-size: 2.4rem;
+
+    font-weight: 400;
+
+    margin-bottom: 10px;
+
+}
+
+.race-panel p:last-child {
+
+    max-width: 700px;
+
+    font-size: 0.95rem;
+
+    font-weight: 300;
+
+}
+
+
+/* =========================================
+   QUIZ CTA
+========================================= */
+
+.quiz-cta {
+
+    text-align: center;
+
+}
+
+.quiz-content {
+
+    max-width: 700px;
+
+    margin: auto;
+
+}
+
+.quiz-content p:not(.eyebrow) {
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.quote-section {
+
+    padding: 100px 8%;
+
+    text-align: center;
+
+    background: var(--deep-blue);
+
+    color: white;
+
+}
+
+blockquote {
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(2rem, 4vw, 4rem);
+
+    line-height: 1.1;
+
+    max-width: 900px;
+
+    margin: auto;
+
+}
+
+.quote-section p {
+
+    margin-top: 25px;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+
+    background: #132B42;
+
+    color: white;
+
+    padding: 60px 8% 25px;
+
+}
+
+.footer-logo img {
+
+    width: 70px;
+
+    margin-bottom: 25px;
+
+}
+
+.footer-content p:first-child {
+
+    font-family: var(--heading-font);
+
+    font-size: 1.8rem;
+
+}
+
+.footer-content p:last-child {
+
+    color: var(--soft-blue);
+
+    margin-top: 5px;
+
+}
+
+.footer-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255,255,255,0.2);
+
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    font-size: 0.75rem;
+
+}
+
+.footer-bottom a {
+
+    color: var(--soft-blue);
+
+}
+
+
+/* =========================================
+   DRIVERS PAGE
+========================================= */
 
 .drivers-hero {
 
@@ -999,13 +1005,11 @@ blockquote {
 
 }
 
-
 .drivers-hero-content {
 
     max-width: 800px;
 
 }
-
 
 .drivers-hero h1 {
 
@@ -1021,7 +1025,6 @@ blockquote {
 
 }
 
-
 .drivers-hero p:not(.eyebrow) {
 
     max-width: 550px;
@@ -1032,9 +1035,6 @@ blockquote {
 
 }
 
-
-/* ---------- DRIVER DIRECTORY ---------- */
-
 .drivers-section {
 
     padding: 120px 8%;
@@ -1043,9 +1043,6 @@ blockquote {
 
 }
 
-
-/* ---------- SEARCH ---------- */
-
 .driver-controls {
 
     max-width: 600px;
@@ -1053,7 +1050,6 @@ blockquote {
     margin-bottom: 35px;
 
 }
-
 
 .driver-controls label {
 
@@ -1072,7 +1068,6 @@ blockquote {
     text-transform: uppercase;
 
 }
-
 
 .driver-controls input {
 
@@ -1094,7 +1089,6 @@ blockquote {
 
 }
 
-
 .driver-controls input:focus {
 
     border-color: var(--deep-blue);
@@ -1102,9 +1096,9 @@ blockquote {
 }
 
 
-/* ---------- FILTERS ---------- */
+/* ---------- DRIVER FILTERS ---------- */
 
-.team-filters {
+.driver-filters {
 
     display: flex;
 
@@ -1116,8 +1110,7 @@ blockquote {
 
 }
 
-
-.filter-button {
+.driver-filter {
 
     padding: 10px 18px;
 
@@ -1143,9 +1136,8 @@ blockquote {
 
 }
 
-
-.filter-button:hover,
-.filter-button.active {
+.driver-filter:hover,
+.driver-filter.active {
 
     background: var(--deep-blue);
 
@@ -1162,24 +1154,23 @@ blockquote {
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 20px;
 
 }
 
-
 .driver-card {
 
-    min-height: 300px;
+    min-height: 400px;
 
     display: flex;
 
     flex-direction: column;
 
-    justify-content: space-between;
+    justify-content: flex-end;
 
-    padding: 30px;
+    overflow: hidden;
 
     background: var(--light-bg);
 
@@ -1187,19 +1178,49 @@ blockquote {
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease;
+        box-shadow 0.3s ease;
 
 }
-
 
 .driver-card:hover {
 
     transform: translateY(-6px);
 
-    background: #edf3f8;
+    box-shadow: 0 15px 35px rgba(29,61,94,0.12);
 
 }
 
+.driver-image-container {
+
+    width: 100%;
+
+    height: 300px;
+
+    overflow: hidden;
+
+    background: #e9eef2;
+
+}
+
+.driver-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    transition: transform 0.4s ease;
+
+}
+
+.driver-card:hover .driver-image {
+
+    transform: scale(1.04);
+
+}
 
 .driver-number {
 
@@ -1207,19 +1228,19 @@ blockquote {
 
     color: var(--soft-blue);
 
-    font-size: 4rem;
+    font-size: 3.5rem;
 
     line-height: 1;
 
-}
+    padding: 20px 25px 0;
 
+}
 
 .driver-card-content {
 
-    margin-top: 50px;
+    padding: 10px 25px 25px;
 
 }
-
 
 .driver-team {
 
@@ -1237,14 +1258,13 @@ blockquote {
 
 }
 
-
 .driver-card h3 {
 
     font-family: var(--heading-font);
 
     color: var(--deep-blue);
 
-    font-size: 2rem;
+    font-size: 1.8rem;
 
     font-weight: 400;
 
@@ -1254,13 +1274,17 @@ blockquote {
 
 }
 
+.driver-nationality {
+
+    font-size: 0.85rem;
+
+}
 
 .driver-country {
 
     font-size: 0.85rem;
 
 }
-
 
 .no-results {
 
@@ -1272,7 +1296,10 @@ blockquote {
 
 }
 
-/* ---------- TEAMS PAGE ---------- */
+
+/* =========================================
+   TEAMS PAGE
+========================================= */
 
 .teams-hero {
 
@@ -1294,13 +1321,11 @@ blockquote {
 
 }
 
-
 .teams-hero-content {
 
     max-width: 800px;
 
 }
-
 
 .teams-hero h1 {
 
@@ -1316,7 +1341,6 @@ blockquote {
 
 }
 
-
 .teams-hero p:not(.eyebrow) {
 
     max-width: 600px;
@@ -1327,9 +1351,6 @@ blockquote {
 
 }
 
-
-/* ---------- TEAM DIRECTORY ---------- */
-
 .teams-section {
 
     padding: 120px 8%;
@@ -1337,9 +1358,6 @@ blockquote {
     background: var(--white);
 
 }
-
-
-/* ---------- TEAM CARDS ---------- */
 
 .teams-grid {
 
@@ -1351,10 +1369,9 @@ blockquote {
 
 }
 
-
 .team-card {
 
-    min-height: 320px;
+    min-height: 350px;
 
     display: flex;
 
@@ -1374,7 +1391,6 @@ blockquote {
 
 }
 
-
 .team-card:hover {
 
     transform: translateY(-6px);
@@ -1383,6 +1399,33 @@ blockquote {
 
 }
 
+.team-logo-container {
+
+    height: 140px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+}
+
+.team-logo {
+
+    max-width: 180px;
+
+    max-height: 110px;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
 
 .team-abbreviation {
 
@@ -1396,13 +1439,11 @@ blockquote {
 
 }
 
-
 .team-card-content {
 
-    margin-top: 60px;
+    margin-top: 20px;
 
 }
-
 
 .team-label {
 
@@ -1417,7 +1458,6 @@ blockquote {
     letter-spacing: 2px;
 
 }
-
 
 .team-card h3 {
 
@@ -1435,13 +1475,11 @@ blockquote {
 
 }
 
-
 .team-base {
 
     font-size: 0.85rem;
 
 }
-
 
 .no-team-results {
 
@@ -1453,7 +1491,10 @@ blockquote {
 
 }
 
-/* ---------- QUIZ PAGE ---------- */
+
+/* =========================================
+   QUIZ PAGE
+========================================= */
 
 .quiz-hero {
 
@@ -1475,13 +1516,11 @@ blockquote {
 
 }
 
-
 .quiz-hero-content {
 
     max-width: 800px;
 
 }
-
 
 .quiz-hero h1 {
 
@@ -1497,7 +1536,6 @@ blockquote {
 
 }
 
-
 .quiz-hero p:not(.eyebrow) {
 
     max-width: 600px;
@@ -1511,7 +1549,7 @@ blockquote {
 }
 
 
-/* ---------- BUTTON ---------- */
+/* ---------- QUIZ BUTTON ---------- */
 
 .primary-button {
 
@@ -1541,7 +1579,6 @@ blockquote {
 
 }
 
-
 .primary-button:hover {
 
     background: transparent;
@@ -1563,13 +1600,11 @@ blockquote {
 
 }
 
-
 .quiz-section.active {
 
     display: block;
 
 }
-
 
 .quiz-container {
 
@@ -1578,7 +1613,6 @@ blockquote {
     margin: 0 auto;
 
 }
-
 
 .quiz-progress {
 
@@ -1603,7 +1637,6 @@ blockquote {
     text-transform: uppercase;
 
 }
-
 
 .question-container h2 {
 
@@ -1636,7 +1669,6 @@ blockquote {
 
 }
 
-
 .answer-button {
 
     min-height: 75px;
@@ -1661,7 +1693,6 @@ blockquote {
 
 }
 
-
 .answer-button:hover:not(:disabled) {
 
     border-color: var(--deep-blue);
@@ -1669,7 +1700,6 @@ blockquote {
     background: #edf3f8;
 
 }
-
 
 .answer-button.correct {
 
@@ -1679,7 +1709,6 @@ blockquote {
 
 }
 
-
 .answer-button.incorrect {
 
     border-color: #9b3030;
@@ -1687,7 +1716,6 @@ blockquote {
     background: #f8e8e8;
 
 }
-
 
 .answer-button:disabled {
 
@@ -1718,13 +1746,11 @@ blockquote {
 
 }
 
-
 .quiz-result.show {
 
     display: flex;
 
 }
-
 
 .result-content h2 {
 
@@ -1740,7 +1766,6 @@ blockquote {
 
 }
 
-
 .result-content p:not(.eyebrow) {
 
     max-width: 550px;
@@ -1753,21 +1778,46 @@ blockquote {
 
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .drivers-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .teams-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
 
 @media (max-width: 800px) {
 
     /* ---------- NAVIGATION ---------- */
 
     .navigation {
+
         display: none;
+
     }
 
     .menu-button {
+
         display: block;
+
     }
 
     .navigation.open {
+
         display: flex;
 
         position: absolute;
@@ -1789,120 +1839,170 @@ blockquote {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
         z-index: 100;
+
     }
 
 
     /* ---------- HERO ---------- */
 
     .hero {
+
         min-height: 90vh;
 
         padding: 100px 7% 70px;
 
         align-items: flex-end;
+
     }
 
     .hero-content {
+
         max-width: 100%;
+
     }
 
     .hero h1 {
+
         font-size: clamp(3rem, 14vw, 5rem);
+
     }
 
 
-    /* ---------- SECTION HEADINGS ---------- */
+    /* ---------- GENERAL ---------- */
 
     .section {
+
         padding: 80px 7%;
+
     }
 
     .section-heading {
+
         margin-bottom: 45px;
+
     }
 
     .section-heading h2 {
+
         font-size: 2.8rem;
+
     }
 
 
-    /* ---------- START HERE / GUIDE CARDS ---------- */
+    /* ---------- INTRO ---------- */
+
+    .intro {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+    .section-image img {
+
+        height: 400px;
+
+    }
+
+
+    /* ---------- START HERE ---------- */
 
     .guide-grid {
+
         grid-template-columns: 1fr;
+
     }
 
     .guide-card {
+
         min-height: 250px;
+
     }
 
 
-    /* ---------- F1 DICTIONARY ---------- */
+    /* ---------- DICTIONARY ---------- */
 
     .dictionary-grid {
+
         grid-template-columns: 1fr;
+
     }
 
     .term-button {
+
         padding: 25px;
+
     }
 
     .term-definition {
+
         padding-left: 25px;
 
         padding-right: 25px;
+
     }
 
 
     /* ---------- RACE WEEKEND ---------- */
 
     .race-weekend {
+
         grid-template-columns: 1fr;
 
         gap: 50px;
 
         padding: 80px 7%;
+
     }
 
     .race-content {
+
         max-width: 100%;
+
     }
 
     .race-content h2 {
+
         font-size: 3.2rem;
+
     }
 
     .race-timeline {
+
         width: 100%;
+
     }
 
     .race-step {
+
         grid-template-columns: 50px 1fr;
+
     }
 
     .race-info {
+
         grid-column: auto;
+
     }
 
     .race-panel h3 {
+
         font-size: 2rem;
-    }
 
-
-    /* ---------- QUIZ ---------- */
-
-    .quiz-section {
-        padding: 80px 7%;
     }
 
 
     /* ---------- FOOTER ---------- */
 
     .site-footer {
-    padding: 50px 7%;
-}
 
-    /* ---------- DRIVERS PAGE ---------- */
+        padding: 50px 7%;
+
+    }
+
+
+    /* ---------- DRIVERS ---------- */
 
     .drivers-hero {
 
@@ -1912,13 +2012,11 @@ blockquote {
 
     }
 
-
     .drivers-hero h1 {
 
         font-size: clamp(3.5rem, 14vw, 5rem);
 
     }
-
 
     .drivers-section {
 
@@ -1926,35 +2024,43 @@ blockquote {
 
     }
 
-
-    .drivers-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .team-filters {
+    .driver-filters {
 
         gap: 8px;
 
     }
 
-
-    .filter-button {
+    .driver-filter {
 
         padding: 9px 13px;
 
     }
 
 
-    .driver-card {
+    /* ---------- TEAMS ---------- */
 
-        min-height: 270px;
+    .teams-hero {
+
+        min-height: 60vh;
+
+        padding: 110px 7% 70px;
 
     }
 
-    /* ---------- QUIZ PAGE ---------- */
+    .teams-hero h1 {
+
+        font-size: clamp(3.5rem, 14vw, 5rem);
+
+    }
+
+    .teams-section {
+
+        padding: 80px 7%;
+
+    }
+
+
+    /* ---------- QUIZ ---------- */
 
     .quiz-hero {
 
@@ -1964,13 +2070,11 @@ blockquote {
 
     }
 
-
     .quiz-hero h1 {
 
         font-size: clamp(3.5rem, 14vw, 5rem);
 
     }
-
 
     .quiz-section {
 
@@ -1978,13 +2082,11 @@ blockquote {
 
     }
 
-
     .quiz-progress {
 
         margin-bottom: 35px;
 
     }
-
 
     .question-container h2 {
 
@@ -1992,20 +2094,17 @@ blockquote {
 
     }
 
-
     .answer-options {
 
         grid-template-columns: 1fr;
 
     }
 
-
     .answer-button {
 
         min-height: 65px;
 
     }
-
 
     .quiz-result {
 
@@ -2015,9 +2114,75 @@ blockquote {
 
     }
 
-
     .result-content h2 {
 
         font-size: 6rem;
 
     }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .drivers-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .teams-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .driver-image-container {
+
+        height: 360px;
+
+    }
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+:focus-visible {
+
+    outline: 3px solid var(--soft-blue);
+
+    outline-offset: 3px;
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation: none !important;
+
+        transition: none !important;
+
+    }
+
+}
+```
