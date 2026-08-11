@@ -1,128 +1,95 @@
 /* =========================================
    RF1 - 2026 F1 TEAMS
-   ========================================= */
+========================================= */
 
 const teams = [
 
     {
         name: "McLaren",
-        shortName: "MCL",
-        base: "Woking, United Kingdom",
-        team: "mclaren",
-        drivers: [
-            "Lando Norris",
-            "Oscar Piastri"
-        ]
+        teamFilter: "mclaren",
+        country: "United Kingdom",
+        drivers: "Lando Norris & Oscar Piastri",
+        logo: "images/teams/mclaren.webp"
     },
 
     {
         name: "Ferrari",
-        shortName: "FER",
-        base: "Maranello, Italy",
-        team: "ferrari",
-        drivers: [
-            "Charles Leclerc",
-            "Lewis Hamilton"
-        ]
+        teamFilter: "ferrari",
+        country: "Italy",
+        drivers: "Charles Leclerc & Lewis Hamilton",
+        logo: "images/teams/ferrari.webp"
     },
 
     {
         name: "Mercedes",
-        shortName: "MER",
-        base: "Brackley, United Kingdom",
-        team: "mercedes",
-        drivers: [
-            "George Russell",
-            "Kimi Antonelli"
-        ]
+        teamFilter: "mercedes",
+        country: "Germany",
+        drivers: "George Russell & Kimi Antonelli",
+        logo: "images/teams/mercedes.webp"
     },
 
     {
         name: "Red Bull Racing",
-        shortName: "RBR",
-        base: "Milton Keynes, United Kingdom",
-        team: "red-bull",
-        drivers: [
-            "Max Verstappen",
-            "Isack Hadjar"
-        ]
+        teamFilter: "red-bull",
+        country: "Austria",
+        drivers: "Max Verstappen & Isack Hadjar",
+        logo: "images/teams/red-bull.webp"
     },
 
     {
         name: "Racing Bulls",
-        shortName: "VCARB",
-        base: "Faenza, Italy",
-        team: "racing-bulls",
-        drivers: [
-            "Liam Lawson",
-            "Arvid Lindblad"
-        ]
+        teamFilter: "racing-bulls",
+        country: "Italy",
+        drivers: "Liam Lawson & Arvid Lindblad",
+        logo: "images/teams/racing-bulls.webp"
     },
 
     {
         name: "Alpine",
-        shortName: "ALP",
-        base: "Enstone, United Kingdom",
-        team: "alpine",
-        drivers: [
-            "Pierre Gasly",
-            "Franco Colapinto"
-        ]
+        teamFilter: "alpine",
+        country: "France",
+        drivers: "Pierre Gasly & Franco Colapinto",
+        logo: "images/teams/alpine.webp"
     },
 
     {
         name: "Haas",
-        shortName: "HAA",
-        base: "Kannapolis, United States",
-        team: "haas",
-        drivers: [
-            "Esteban Ocon",
-            "Oliver Bearman"
-        ]
+        teamFilter: "haas",
+        country: "United States",
+        drivers: "Esteban Ocon & Oliver Bearman",
+        logo: "images/teams/haas.webp"
     },
 
     {
         name: "Audi",
-        shortName: "AUD",
-        base: "Hinwil, Switzerland",
-        team: "audi",
-        drivers: [
-            "Nico Hulkenberg",
-            "Gabriel Bortoleto"
-        ]
+        teamFilter: "audi",
+        country: "Germany",
+        drivers: "Nico Hulkenberg & Gabriel Bortoleto",
+        logo: "images/teams/audi.webp"
     },
 
     {
         name: "Williams",
-        shortName: "WIL",
-        base: "Grove, United Kingdom",
-        team: "williams",
-        drivers: [
-            "Carlos Sainz",
-            "Alexander Albon"
-        ]
+        teamFilter: "williams",
+        country: "United Kingdom",
+        drivers: "Carlos Sainz & Alexander Albon",
+        logo: "images/teams/williams.webp"
     },
 
     {
         name: "Aston Martin",
-        shortName: "AMR",
-        base: "Silverstone, United Kingdom",
-        team: "aston-martin",
-        drivers: [
-            "Fernando Alonso",
-            "Lance Stroll"
-        ]
+        teamFilter: "aston-martin",
+        country: "United Kingdom",
+        drivers: "Fernando Alonso & Lance Stroll",
+        logo: "images/teams/aston-martin.webp"
     },
 
     {
         name: "Cadillac",
-        shortName: "CAD",
-        base: "Silverstone, United Kingdom",
-        team: "cadillac",
-        drivers: [
-            "Sergio Perez",
-            "Valtteri Bottas"
-        ]
+        teamFilter: "cadillac",
+        country: "United States",
+        drivers: "Sergio Perez & Valtteri Bottas",
+        logo: "images/teams/cadillac.webp"
     }
 
 ];
@@ -130,7 +97,7 @@ const teams = [
 
 /* =========================================
    ELEMENTS
-   ========================================= */
+========================================= */
 
 const teamsGrid =
     document.querySelector("#teams-grid");
@@ -139,7 +106,10 @@ const filterButtons =
     document.querySelectorAll(".team-filter");
 
 const noResults =
-    document.querySelector("#no-team-results");
+    document.querySelector("#no-results");
+
+const currentYear =
+    document.querySelector("#current-year");
 
 
 let selectedTeam = "all";
@@ -147,7 +117,7 @@ let selectedTeam = "all";
 
 /* =========================================
    DISPLAY TEAMS
-   ========================================= */
+========================================= */
 
 function displayTeams(teamList) {
 
@@ -156,14 +126,13 @@ function displayTeams(teamList) {
 
     if (teamList.length === 0) {
 
-        noResults.style.display = "block";
+        noResults.hidden = false;
 
         return;
-
     }
 
 
-    noResults.style.display = "none";
+    noResults.hidden = true;
 
 
     teamList.forEach((team) => {
@@ -171,39 +140,37 @@ function displayTeams(teamList) {
         const card =
             document.createElement("article");
 
+
         card.classList.add("team-card");
 
 
         card.innerHTML = `
 
-            <div class="team-abbreviation">
-                ${team.shortName}
+            <div class="team-logo-container">
+
+                <img
+                    class="team-logo"
+                    src="${team.logo}"
+                    alt="${team.name} logo"
+                    loading="lazy">
+
             </div>
+
 
             <div class="team-card-content">
 
-                <p class="team-label">
-                    CONSTRUCTOR
+                <p class="team-country">
+                    ${team.country}
                 </p>
+
 
                 <h3>
                     ${team.name}
                 </h3>
 
-                <div class="team-drivers">
 
-                    <p>
-                        ${team.drivers[0]}
-                    </p>
-
-                    <p>
-                        ${team.drivers[1]}
-                    </p>
-
-                </div>
-
-                <p class="team-base">
-                    ${team.base}
+                <p class="team-drivers">
+                    ${team.drivers}
                 </p>
 
             </div>
@@ -220,23 +187,16 @@ function displayTeams(teamList) {
 
 /* =========================================
    FILTER TEAMS
-   ========================================= */
+========================================= */
 
 function filterTeams() {
-
-    if (selectedTeam === "all") {
-
-        displayTeams(teams);
-
-        return;
-
-    }
-
 
     const filteredTeams =
         teams.filter((team) => {
 
-            return team.team === selectedTeam;
+            return selectedTeam === "all"
+                ||
+                team.teamFilter === selectedTeam;
 
         });
 
@@ -247,12 +207,13 @@ function filterTeams() {
 
 
 /* =========================================
-   TEAM FILTERS
-   ========================================= */
+   TEAM FILTER BUTTONS
+========================================= */
 
 filterButtons.forEach((button) => {
 
     button.addEventListener("click", () => {
+
 
         filterButtons.forEach((item) => {
 
@@ -276,19 +237,8 @@ filterButtons.forEach((button) => {
 
 
 /* =========================================
-   INITIAL DISPLAY
-   ========================================= */
-
-displayTeams(teams);
-
-
-/* =========================================
    CURRENT YEAR
-   ========================================= */
-
-const currentYear =
-    document.querySelector("#current-year");
-
+========================================= */
 
 if (currentYear) {
 
@@ -296,3 +246,10 @@ if (currentYear) {
         new Date().getFullYear();
 
 }
+
+
+/* =========================================
+   INITIAL DISPLAY
+========================================= */
+
+displayTeams(teams);
